@@ -1,0 +1,3 @@
+rootProject.name = 'booking-main'
+include 'booking-auth'
+project(':booking-auth').projectDir = file('../booking-auth');

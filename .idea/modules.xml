@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-be.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-be.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-auth.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-auth.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-auth/booking-be.booking-auth.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-auth/booking-be.booking-auth.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1816822821/booking-main.booking-auth.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1816822821/booking-main.booking-auth.main.iml" />
     </modules>
   </component>
 </project>

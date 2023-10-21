@@ -1,1 +1,3 @@
 rootProject.name = 'booking-be'
+include 'booking-main'
+include 'booking-auth'
