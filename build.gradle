@@ -21,6 +21,7 @@ dependencies {
 ear {
     dependsOn ':booking-main:war'
     dependsOn ':booking-auth:war'
+    dependsOn ':booking-model:war'
     //change context path to reflect TFS release pipeline trouble
     deploymentDescriptor {
         webModule(project(":booking-main").tasks.named("war").get().archiveFileName.get(), "booking")

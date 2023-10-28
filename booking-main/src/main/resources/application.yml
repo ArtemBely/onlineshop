@@ -2,6 +2,8 @@ server:
     port: 8080
 
 spring:
+#    autoconfigure:
+#        exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
     jpa:
         hibernate:
             ddl-auto: none

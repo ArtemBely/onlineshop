@@ -1,3 +1,5 @@
 rootProject.name = 'booking-main'
 include 'booking-auth'
 project(':booking-auth').projectDir = file('../booking-auth');
+include 'booking-model'
+project(':booking-model').projectDir = file('../booking-model');
