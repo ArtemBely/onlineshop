@@ -2,8 +2,11 @@ package com.example.bookingauth.services;
 
 import com.example.bookingmodel.data.dto.CustomerDTO;
 import com.example.bookingmodel.data.entity.CustomerEntity;
+import com.example.bookingmodel.data.entity.UserRoleEntity;
 import com.example.bookingmodel.data.mapper.CustomerMapper;
 import com.example.bookingmodel.repositories.CustomerRepository;
+import com.example.bookingmodel.repositories.UserRoleRepository;
+import com.example.bookingmodel.utilities.DefaultConstants;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,6 +30,8 @@ public class UserAuthService {
 
     private final AuthenticationManager authenticationManager;
 
+    private final UserRoleRepository userRoleRepository;
+
 
 //    public CustomerDTO setAndSaveEncryptedPassword(CustomerDTO customerDTO) {
 //        log.info("Encrypt password...");
@@ -46,6 +51,7 @@ public class UserAuthService {
 
     /**
      * Check if bcrypt compare correctly (test method, remove in prod mode)
+     *
      * @param customerDTO
      * @return
      */
@@ -80,11 +86,20 @@ public class UserAuthService {
         CustomerEntity customerEntity = customerMapper.mapToEntity(request);
         customerEntity.setPassword(encryptionService.getEncodePass(request.getPassword()));
         var savedUser = customerRepository.save(customerEntity);
+        declareDefaultRoleForNewCustomer(savedUser);
         var jwtToken = jwtService.generateToken(savedUser);
         var refreshToken = jwtService.generateRefreshToken(savedUser);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public void declareDefaultRoleForNewCustomer(CustomerEntity customerEntity) {
+        log.info("Saving default User role...");
+        userRoleRepository.save(
+                new UserRoleEntity(
+                        customerEntity.getId(),
+                        DefaultConstants.DEFAULT_USER_ROLE_ID));
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {

@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydGVzdDJAZ29vZ2xlLmNvbSIsImlhdCI6MTY5ODUxNjA1NywiZXhwIjoxNjk4NTE2OTU3fQ.Ny51h1sdqofwbSswLfQzM8C-vdAX4CuuC0z3R9vg0Sw",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydGVzdDJAZ29vZ2xldXl1LmNvbSIsImlhdCI6MTY5OTEwNzA5MCwiZXhwIjoxNjk5MTA3OTkwfQ._0YTk3VtCncGRz_tQGyxAbtZzF8CORkq1X_MN2QUqSc",
 							"type": "string"
 						}
 					]
@@ -45,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Alans\",\r\n    \"surname\": \"Smithz\",\r\n    \"phone\": \"4209984731\",\r\n    \"dateofbirth\": \"2012-12-02\",\r\n    \"email\": \"2test2@google.com\",\r\n    \"password\": \"password\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Alansew\",\r\n    \"surname\": \"Smithz\",\r\n    \"phone\": \"4209984731\",\r\n    \"dateofbirth\": \"2012-12-02\",\r\n    \"email\": \"2test2@googleuyu.com\",\r\n    \"password\": \"password1\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,11 +102,21 @@
 		{
 			"name": "logon",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW1teUBnb29nbGV1eXUuY29tIiwiaWF0IjoxNjk5MTA4MzA4LCJleHAiOjE2OTkxMDkyMDh9.HyHKEp3kf7XU3eEb9MnMnC17wnof6HCcfIhzr1vweN8",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"2test2@google.com\",\r\n    \"password\": \"password\"\r\n}",
+					"raw": "{\r\n    \"email\": \"tammy@googleuyu.com\",\r\n    \"password\": \"password\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,6 +135,37 @@
 						"v1",
 						"auth",
 						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW1teUBnb29nbGV1eXUuY29tIiwiaWF0IjoxNjk5MTA4Mzg5LCJleHAiOjE2OTkxMDkyODl9.Gv-PctxftKLcUKmEVAOug46R4kkVfm_7dCp1csRbpW4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
 					]
 				}
 			},

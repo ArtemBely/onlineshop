@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
+import java.util.List;
 
 @Entity(name = "CustomerEntity")
 @Builder(toBuilder = true)
@@ -42,6 +43,14 @@ public class CustomerEntity implements UserDetails {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private List<RoleEntity> roles;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

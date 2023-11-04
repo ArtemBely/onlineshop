@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.sql.Date;
+import java.util.List;
 
 @Builder(toBuilder = true)
 @Setter
@@ -39,4 +40,6 @@ public class CustomerDTO {
 
     @NotEmpty
     private String password;
+
+    private List<RoleDTO> roles;
 }
