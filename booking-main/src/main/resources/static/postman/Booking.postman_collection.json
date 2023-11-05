@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIydGVzdDJAZ29vZ2xldXl1LmNvbSIsImlhdCI6MTY5OTEwNzA5MCwiZXhwIjoxNjk5MTA3OTkwfQ._0YTk3VtCncGRz_tQGyxAbtZzF8CORkq1X_MN2QUqSc",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXNvbmJvdXJuZUBnbWFpbC5jb20iLCJpYXQiOjE2OTkxOTMzOTEsImV4cCI6MTY5OTE5NDU5MX0.vpQB0Sl46nTGA1D7ays883VBU-7ypYL0tZvFhphcEIo",
 							"type": "string"
 						}
 					]
@@ -116,7 +116,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"tammy@googleuyu.com\",\r\n    \"password\": \"password\"\r\n}",
+					"raw": "{\r\n    \"email\": \"jasonbourne@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -148,7 +148,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW1teUBnb29nbGV1eXUuY29tIiwiaWF0IjoxNjk5MTA4Mzg5LCJleHAiOjE2OTkxMDkyODl9.Gv-PctxftKLcUKmEVAOug46R4kkVfm_7dCp1csRbpW4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXNvbmJvdXJuZUBnbWFpbC5jb20iLCJpYXQiOjE2OTkxOTMzOTEsImV4cCI6MTY5OTE5NDU5MX0.vpQB0Sl46nTGA1D7ays883VBU-7ypYL0tZvFhphcEIo",
 							"type": "string"
 						}
 					]
@@ -166,6 +166,36 @@
 						"api",
 						"v1",
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXNvbmJvdXJuZUBnbWFpbC5jb20iLCJpYXQiOjE2OTkxOTMzOTEsImV4cCI6MTY5OTE5NDU5MX0.vpQB0Sl46nTGA1D7ays883VBU-7ypYL0tZvFhphcEIo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admin/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admin",
+						"dashboard"
 					]
 				}
 			},

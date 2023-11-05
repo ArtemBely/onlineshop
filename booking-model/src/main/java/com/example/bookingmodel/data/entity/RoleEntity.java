@@ -29,6 +29,7 @@ public class RoleEntity {
     @Column(name = "role_description", nullable = false)
     private String role_description;
 
+    @ToString.Exclude
     @ManyToMany(mappedBy = "roles")
     private List<CustomerEntity> customerEntities;
 }

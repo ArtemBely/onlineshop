@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-//@RestController("homeMainControllerImplementation")
+@RestController("mainUserController")
 @RequiredArgsConstructor
-@RequestMapping("/test")
-public class HomeController {
+@RequestMapping("/user")
+public class MainUserController {
 
-    @GetMapping("/hello")
+    @GetMapping("/dashboard")
     public String getHello() {
-        System.out.println("HELLO");
-        return "Hello there";
+        return "Hello I'm user";
     }
 }
+

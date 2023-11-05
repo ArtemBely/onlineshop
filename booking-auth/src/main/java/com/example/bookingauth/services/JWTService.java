@@ -29,9 +29,9 @@ public class JWTService {
     //404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
 //    @Value("${application.security.jwt.secret-key}")
     private String SECRET_KEY;
-    @Value("${application.security.jwt.expiration:900000}")
+    @Value("${application.security.jwt.expiration:1200000}")
     private long jwtExpiration;
-    @Value("${application.security.jwt.refresh-token.expiration:900000}")
+    @Value("${application.security.jwt.refresh-token.expiration:2100000}")
     private long refreshExpiration;
 
 //    private static final String SECRET_KEY = "e6e0f7f3da92315175573342a6f43af384a6b4a6bbff7229decf83e5907f6d62";
