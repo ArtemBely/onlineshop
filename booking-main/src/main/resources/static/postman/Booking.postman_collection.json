@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "64cf75be-98f3-47d8-9ee4-b07187a4c714",
+		"_postman_id": "ab6250b5-f80e-49a9-9909-ff2ecf85e871",
 		"name": "Booking",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11497366"
+		"_exporter_id": "30811481"
 	},
 	"item": [
 		{
@@ -14,7 +14,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXNvbmJvdXJuZUBnbWFpbC5jb20iLCJpYXQiOjE2OTkxOTMzOTEsImV4cCI6MTY5OTE5NDU5MX0.vpQB0Sl46nTGA1D7ays883VBU-7ypYL0tZvFhphcEIo",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjcmluZ2VAZ29vZ2xlLmNvbSIsImlhdCI6MTY5OTc5NTI5MywiZXhwIjoxNjk5Nzk2NDkzfQ.AeE-cjw4UytGV3at1riUYo-SUVhke4oF-q65ZLeyVow",
 							"type": "string"
 						}
 					]
@@ -45,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Alansew\",\r\n    \"surname\": \"Smithz\",\r\n    \"phone\": \"4209984731\",\r\n    \"dateofbirth\": \"2012-12-02\",\r\n    \"email\": \"2test2@googleuyu.com\",\r\n    \"password\": \"password1\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Alans\",\r\n    \"surname\": \"Smithz\",\r\n    \"phone\": \"4209984731\",\r\n    \"dateofbirth\": \"2012-12-02\",\r\n    \"email\": \"2test2@google.com\",\r\n    \"password\": \"password\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,21 +102,11 @@
 		{
 			"name": "logon",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YW1teUBnb29nbGV1eXUuY29tIiwiaWF0IjoxNjk5MTA4MzA4LCJleHAiOjE2OTkxMDkyMDh9.HyHKEp3kf7XU3eEb9MnMnC17wnof6HCcfIhzr1vweN8",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"jasonbourne@gmail.com\",\r\n    \"password\": \"admin\"\r\n}",
+					"raw": "{\r\n    \"email\": \"2test2@google.com\",\r\n    \"password\": \"password\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -141,22 +131,21 @@
 			"response": []
 		},
 		{
-			"name": "get all users",
+			"name": "create product",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXNvbmJvdXJuZUBnbWFpbC5jb20iLCJpYXQiOjE2OTkxOTMzOTEsImV4cCI6MTY5OTE5NDU5MX0.vpQB0Sl46nTGA1D7ays883VBU-7ypYL0tZvFhphcEIo",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/users",
+					"raw": "http://localhost:8080/api/v1/create_product",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -165,39 +154,121 @@
 					"path": [
 						"api",
 						"v1",
-						"users"
+						"create_product"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "admin test",
+			"name": "delete product",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXNvbmJvdXJuZUBnbWFpbC5jb20iLCJpYXQiOjE2OTkxOTMzOTEsImV4cCI6MTY5OTE5NDU5MX0.vpQB0Sl46nTGA1D7ays883VBU-7ypYL0tZvFhphcEIo",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjaGRhY2VAZ29vZ2xlLmNvbSIsImlhdCI6MTcwMTUzNjk3MiwiZXhwIjoxNzAxNTM4MTcyfQ.DkyltGH1Dj4-fjPUugRi7G21UkaULax5f57WMLq7fTA",
 							"type": "string"
 						}
 					]
 				},
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/admin/dashboard",
+					"raw": "http://localhost:8080/api/v1/products/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"admin",
-						"dashboard"
+						"api",
+						"v1",
+						"products",
+						"3"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get product by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add product to kosik",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkQGdvb2dsZS5jb20iLCJpYXQiOjE3MDE1NTQ4NjcsImV4cCI6MTcwMTU1NjA2N30.ctdjVC48R-o15o-AEM0xVaGXA8xhz-6vU-Yx2QagTLw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kosik/add/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kosik",
+						"add",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product from kosik",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kosik/remove/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kosik",
+						"remove",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products in kosik",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
