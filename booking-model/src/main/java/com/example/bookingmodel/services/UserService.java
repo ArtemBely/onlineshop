@@ -29,4 +29,10 @@ public class UserService {
                 .map(customerMapper::mapToDto)
                 .collect(Collectors.toList());
     }
+
+    public Optional<CustomerDTO> findUserByEmail(String email) {
+        log.info("Searching for user with email: {}", email);
+        return customerRepository.findCustomerEntitiesByEmail(email)
+                .map(customerMapper::mapToDto);
+    }
 }
