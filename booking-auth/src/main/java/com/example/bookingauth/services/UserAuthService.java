@@ -89,8 +89,13 @@ public class UserAuthService {
         declareDefaultRoleForNewCustomer(savedUser);
         var jwtToken = jwtService.generateToken(savedUser);
         var refreshToken = jwtService.generateRefreshToken(savedUser);
+        var reloadedUser = customerRepository.findById(savedUser.getId()).orElseThrow();
         return AuthenticationResponse.builder()
                 .token(jwtToken)
+                .name(request.getName())
+                .surname(request.getSurname())
+                .email(request.getEmail())
+                .phone(request.getPhone())
                 .build();
     }
 
@@ -117,6 +122,10 @@ public class UserAuthService {
 //        saveUserToken(user, jwtToken);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
+                .name(user.getName())
+                .surname(user.getSurname())
+                .email(user.getEmail())
+                .phone(user.getPhone())
 //                .accessToken(jwtToken)
 //                .refreshToken(refreshToken)
                 .build();
