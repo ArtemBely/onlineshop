@@ -41,5 +41,6 @@ public class CustomerDTO {
     @NotEmpty
     private String password;
 
+
     private List<RoleDTO> roles;
 }
