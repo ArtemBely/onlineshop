@@ -20,7 +20,6 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-    private final UserPhotoService userPhotoService;
 
     @GetMapping("/users")
     public List<CustomerDTO> getUsres() {
