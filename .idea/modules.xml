@@ -11,6 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/497820748/booking-main.booking-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/497820748/booking-main.booking-model.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-main.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-main.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-auth/com.example.booking-be.booking-auth.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-auth/com.example.booking-be.booking-auth.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-main/com.example.booking-be.booking-main.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-main/com.example.booking-be.booking-main.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/booking-model/com.example.booking-be.booking-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/booking-model/com.example.booking-be.booking-model.main.iml" />
     </modules>
   </component>
 </project>

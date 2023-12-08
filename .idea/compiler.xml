@@ -8,15 +8,24 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.7.8/cb1e95433ef15ed363be6fcc538e8406aa7606f7/spring-boot-configuration-processor-2.7.8.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.28/a2ff5da8bcd8b1b26f36b806ced63213362c6dcc/lombok-1.18.28.jar" />
         </processorPath>
+<<<<<<< HEAD
         <module name="booking-main.booking-auth.main" />
         <module name="booking-main.booking-model.main" />
+=======
+        <module name="com.example.booking-be.booking-auth.main" />
+        <module name="com.example.booking-be.booking-model.main" />
+>>>>>>> 727e3554d11752c7941ed7c0746653855ec34cc4
       </profile>
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.28/a2ff5da8bcd8b1b26f36b806ced63213362c6dcc/lombok-1.18.28.jar" />
         </processorPath>
+<<<<<<< HEAD
         <module name="booking-main.main" />
+=======
+        <module name="com.example.booking-be.booking-main.main" />
+>>>>>>> 727e3554d11752c7941ed7c0746653855ec34cc4
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
