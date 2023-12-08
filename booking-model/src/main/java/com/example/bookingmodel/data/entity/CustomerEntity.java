@@ -46,6 +46,7 @@ public class CustomerEntity implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
@@ -53,6 +54,7 @@ public class CustomerEntity implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private List<RoleEntity> roles;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
