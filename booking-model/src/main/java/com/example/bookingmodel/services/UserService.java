@@ -11,7 +11,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityNotFoundException;
+import javax.sql.DataSource;
+import javax.transaction.Transactional;
 import java.io.IOException;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -24,6 +28,8 @@ public class UserService {
     private final CustomerRepository customerRepository;
 
     private final CustomerMapper customerMapper;
+
+    private final DataSource dataSource;
 
     public List<CustomerDTO> findAllUsers() {
         log.info("Users finding...");
@@ -71,19 +77,11 @@ public class UserService {
         customerRepository.deleteById(id);
     }
 
-//    public void uploadUserPhoto(int id, MultipartFile photo) {
-//        CustomerEntity customer = customerRepository.findById(id)
-//                .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
-//
-//        try {
-//            if (photo != null && !photo.isEmpty()) {
-//                customer.setPhoto(photo.getBytes());
-//            } else {
-//                customer.setPhoto(null);
-//            }
-//            customerRepository.save(customer);
-//        } catch (IOException e) {
-//            throw new RuntimeException("Error saving photo", e);
-//        }
-//    }
+    @Transactional
+    public void saveUserPhoto(int userId, byte[] photoBytes) {
+        CustomerEntity user = customerRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setPhoto(photoBytes);
+        customerRepository.save(user);
+    }
 }

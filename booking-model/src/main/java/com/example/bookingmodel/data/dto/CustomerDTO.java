@@ -7,6 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.List;
 
@@ -21,26 +22,27 @@ public class CustomerDTO {
 
     private int id;
 
-//    @NotEmpty
+    @NotEmpty
     private String name;
 
-//    @NotEmpty
+    @NotEmpty
     private String surname;
 
-//    @NotEmpty
+    @NotEmpty
     private String phone;
 
     @Valid
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE, pattern = "yyyy-MM-dd")
     private Date dateofbirth;
 
-//    @NotEmpty(message = "Email can't be blank")
-//    @Email(message = "Wrong e-mail format")
+    @NotEmpty(message = "Email can't be blank")
+    @Email(message = "Wrong e-mail format")
     private String email;
 
     @NotEmpty
     private String password;
 
+    private byte[] photo;
 
     private List<RoleDTO> roles;
 }

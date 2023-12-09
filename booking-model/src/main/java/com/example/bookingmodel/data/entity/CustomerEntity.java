@@ -1,12 +1,14 @@
 package com.example.bookingmodel.data.entity;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.sql.Date;
 import java.util.Collection;
 import java.util.List;
@@ -46,6 +48,10 @@ public class CustomerEntity implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @Lob
+    @Type(type="org.hibernate.type.BinaryType")
+    @Column(name = "photo", columnDefinition="bytea")
+    private byte[] photo;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

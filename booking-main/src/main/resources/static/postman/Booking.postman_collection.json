@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ab6250b5-f80e-49a9-9909-ff2ecf85e871",
-		"name": "Booking",
+		"_postman_id": "9779262e-f42d-4204-b9d0-d9636511a904",
+		"name": "Booking Copy 2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30811481"
+		"_exporter_id": "11497366"
 	},
 	"item": [
 		{
@@ -45,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Alans\",\r\n    \"surname\": \"Smithz\",\r\n    \"phone\": \"4209984731\",\r\n    \"dateofbirth\": \"2012-12-02\",\r\n    \"email\": \"ddd@google.com\",\r\n    \"password\": \"password\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Alans\",\r\n    \"surname\": \"Smithz\",\r\n    \"phone\": \"4209984731\",\r\n    \"dateofbirth\": \"2012-12-02\",\r\n    \"email\": \"ddds@google.com\",\r\n    \"password\": \"password\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -248,7 +248,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjQGdvb2dsZS5jb20iLCJpYXQiOjE3MDE1NTQ4NDAsImV4cCI6MTcwMTU1NjA0MH0.QBWY9LOlmrLrymXTl8PObwNQtrYrzfOqU-grReePhhk",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGRzQGdvb2dsZS5jb20iLCJpYXQiOjE3MDIxMjA5OTMsImV4cCI6MTcwMjEyMjE5M30.9ICCKc88nc2C89CbcSxWXpMxmlhXqAh-Jn58A_dKEoA",
 							"type": "string"
 						}
 					]
@@ -257,7 +257,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"k@google.com\",\r\n    \"password\": \"password\"\r\n}",
+					"raw": "{\r\n   \"email\": \"ddds@google.com\",\r\n    \"password\": \"password\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -509,6 +509,49 @@
 						"v1",
 						"kosik",
 						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGRzQGdvb2dsZS5jb20iLCJpYXQiOjE3MDIxMjEwMjgsImV4cCI6MTcwMjEyMjIyOH0.KfXbHbol7KtGJJIVic35tGRflbIAsin2vUXYWqOnD8o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/belysheva/Pictures/Saved Pictures/java.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/26/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"26",
+						"photo"
 					]
 				}
 			},

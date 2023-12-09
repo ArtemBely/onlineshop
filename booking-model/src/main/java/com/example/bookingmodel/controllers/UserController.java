@@ -6,7 +6,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 
@@ -48,24 +50,12 @@ public class UserController {
     }
 
 
-
-//    @PostMapping("/user/{userId}/photo")
-//    public ResponseEntity<Void> uploadUserPhoto(@PathVariable Integer userId, @RequestParam("photo") MultipartFile photo) throws IOException {
-//        byte[] photoBytes = photo.getBytes();
-//        userPhotoService.saveUserPhoto(userId, photoBytes);
-//        return ResponseEntity.ok().build();
-//    }
-//
-//    @PutMapping("/user/{userId}/photo")
-//    public ResponseEntity<Void> updateUserPhoto(@PathVariable Integer userId, @RequestParam("photo") MultipartFile photo) throws IOException {
-//        userPhotoService.updateUserPhoto(userId, photo.getBytes());
-//        return ResponseEntity.ok().build();
-//    }
-//
-//    @DeleteMapping("/user/{userId}/photo")
-//    public ResponseEntity<Void> deleteUserPhoto(@PathVariable Integer userId) {
-//        userPhotoService.deleteUserPhoto(userId);
-//        return ResponseEntity.ok().build();
-//    }
+    @PostMapping("/user/{id}/photo")
+    public ResponseEntity<Void> uploadUserPhoto(@PathVariable("id") int userId,
+                                                @RequestParam("photo") MultipartFile photo) throws IOException {
+        byte[] photoBytes = photo.getBytes();
+        userService.saveUserPhoto(userId, photoBytes);
+        return ResponseEntity.ok().build();
+    }
 
 }
