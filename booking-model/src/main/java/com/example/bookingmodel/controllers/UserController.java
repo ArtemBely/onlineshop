@@ -4,6 +4,9 @@ import com.example.bookingmodel.data.dto.CustomerDTO;
 import com.example.bookingmodel.services.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -57,5 +60,19 @@ public class UserController {
         userService.saveUserPhoto(userId, photoBytes);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/user/{id}/photo")
+    public ResponseEntity<byte[]> getUserPhoto(@PathVariable int id) {
+        byte[] photoBytes = userService.getUserPhoto(id);
+        if (photoBytes == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.IMAGE_JPEG); // or the appropriate content type
+
+        return new ResponseEntity<>(photoBytes, headers, HttpStatus.OK);
+    }
+
 
 }

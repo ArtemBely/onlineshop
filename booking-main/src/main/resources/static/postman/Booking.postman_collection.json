@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "9779262e-f42d-4204-b9d0-d9636511a904",
-		"name": "Booking Copy 2",
+		"_postman_id": "5bac6ad3-bc42-4852-a605-ede5befc8054",
+		"name": "Booking",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11497366"
+		"_exporter_id": "30811481"
 	},
 	"item": [
 		{
@@ -551,6 +551,39 @@
 						"v1",
 						"user",
 						"26",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get photo by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc0Bnb29nbGUuY29tIiwiaWF0IjoxNzAyMTI4NDAxLCJleHAiOjE3MDIxMjk2MDF9.yis-2sD0hnY7iBhUhcdCu-AVfXuo7Ulp7LgMq7lzY_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/3/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"3",
 						"photo"
 					]
 				}
