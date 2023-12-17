@@ -84,4 +84,11 @@ public class UserService {
         user.setPhoto(photoBytes);
         customerRepository.save(user);
     }
+
+    public byte[] getUserPhoto(int userId) {
+        return customerRepository.findById(userId)
+                .map(CustomerEntity::getPhoto)
+                .orElse(null);
+    }
+
 }

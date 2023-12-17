@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "9779262e-f42d-4204-b9d0-d9636511a904",
-		"name": "Booking Copy 2",
+		"_postman_id": "a709ab5e-b96e-4b15-a218-69969c1a657d",
+		"name": "Booking",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11497366"
+		"_exporter_id": "31247233"
 	},
 	"item": [
 		{
@@ -248,7 +248,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGRzQGdvb2dsZS5jb20iLCJpYXQiOjE3MDIxMjA5OTMsImV4cCI6MTcwMjEyMjE5M30.9ICCKc88nc2C89CbcSxWXpMxmlhXqAh-Jn58A_dKEoA",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGRzQGdvb2dsZS5jb20iLCJpYXQiOjE3MDIyMTM0NDgsImV4cCI6MTcwMjIxNDY0OH0.povc-k7M7m-53cgOxkGbI6fS036TXG7jJYNqkVC646k",
 							"type": "string"
 						}
 					]
@@ -289,7 +289,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrQGdvb2dsZS5jb20iLCJpYXQiOjE3MDE3MDQwNDksImV4cCI6MTcwMTcwNTI0OX0.RNlIQOaNebCaVVuVmBQJQk5fhuy7pURnkc1PXkF_Ybc",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGRAZ29vZ2xlLmNvbSIsImlhdCI6MTcwMjEzNjQxOSwiZXhwIjoxNzAyMTM3NjE5fQ.mxtm_cnYD7osPX01YfbYW_brMNWCoIjjDKJtMnuRxao",
 							"type": "string"
 						}
 					]
@@ -554,6 +554,14 @@
 						"photo"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
