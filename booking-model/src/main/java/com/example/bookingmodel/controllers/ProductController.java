@@ -60,7 +60,6 @@ public class ProductController {
         if (photoBytes == null) {
             return ResponseEntity.notFound().build();
         }
-
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.IMAGE_JPEG);
 
