@@ -62,7 +62,7 @@ public class ProductController {
         }
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.IMAGE_JPEG); // or the appropriate content type
+        headers.setContentType(MediaType.IMAGE_JPEG);
 
         return new ResponseEntity<>(photoBytes, headers, HttpStatus.OK);
     }
