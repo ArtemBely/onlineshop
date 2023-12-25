@@ -1,6 +1,7 @@
 package com.example.bookingmodel.services;
 
 import com.example.bookingmodel.data.dto.ProductDTO;
+import com.example.bookingmodel.data.entity.CustomerEntity;
 import com.example.bookingmodel.data.entity.ProductEntity;
 import com.example.bookingmodel.data.mapper.ProductMapper;
 import com.example.bookingmodel.repositories.ProductRepository;
@@ -9,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.util.stream.Collectors;
 import java.util.List;
 
@@ -42,5 +44,19 @@ public class ProductService {
         ProductEntity productEntity = productRepository.findById(productId)
                 .orElseThrow(() -> new EntityNotFoundException("Product not found with id: " + productId));
         return productMapper.mapToDto(productEntity);
+    }
+
+    @Transactional
+    public void saveProductPhoto(int productId, byte[] photoBytes) {
+        ProductEntity product = productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
+        product.setPhoto(photoBytes);
+        productRepository.save(product);
+    }
+
+    public byte[] getProductPhoto(int productId) {
+        return productRepository.findById(productId)
+                .map(ProductEntity::getPhoto)
+                .orElse(null);
     }
 }

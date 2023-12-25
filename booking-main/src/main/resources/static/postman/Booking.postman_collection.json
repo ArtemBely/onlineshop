@@ -211,6 +211,82 @@
 			"response": []
 		},
 		{
+			"name": "edit user photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc3NAZ29vZ2xlLmNvbSIsImlhdCI6MTcwMjEyNzU5OCwiZXhwIjoxNzAyMTI4Nzk4fQ.Rzj1Q0vTuDH1awBur48kVdPqT2xCO_Ol-4SdPbupQTE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/sawam/Desktop/nur/banana.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/3/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"3",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user photo by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc0Bnb29nbGUuY29tIiwiaWF0IjoxNzAyMTI4NDAxLCJleHAiOjE3MDIxMjk2MDF9.yis-2sD0hnY7iBhUhcdCu-AVfXuo7Ulp7LgMq7lzY_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/3/photo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"3",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "match password",
 			"request": {
 				"method": "POST",
@@ -515,14 +591,14 @@
 			"response": []
 		},
 		{
-			"name": "edit photo",
+			"name": "edit product photo",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkZGRzQGdvb2dsZS5jb20iLCJpYXQiOjE3MDIxMjEwMjgsImV4cCI6MTcwMjEyMjIyOH0.KfXbHbol7KtGJJIVic35tGRflbIAsin2vUXYWqOnD8o",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaWNrQGdvb2dsZS5jb20iLCJpYXQiOjE3MDM1Mjg4NzIsImV4cCI6MTcwMzUzMDA3Mn0.-vc3KEWh3DA3MeWqokJR5iTttY9DcXD9e4JFSOvQDNc",
 							"type": "string"
 						}
 					]
@@ -535,12 +611,12 @@
 						{
 							"key": "photo",
 							"type": "file",
-							"src": "/C:/Users/belysheva/Pictures/Saved Pictures/java.jpg"
+							"src": "/C:/Users/sawam/Desktop/nur/banana.jpg"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/user/26/photo",
+					"raw": "http://localhost:8080/api/v1/products/2/photo",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -549,8 +625,8 @@
 					"path": [
 						"api",
 						"v1",
-						"user",
-						"26",
+						"products",
+						"2",
 						"photo"
 					]
 				}
@@ -558,14 +634,14 @@
 			"response": []
 		},
 		{
-			"name": "get photo by id",
+			"name": "get product photo by id",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzc0Bnb29nbGUuY29tIiwiaWF0IjoxNzAyMTI4NDAxLCJleHAiOjE3MDIxMjk2MDF9.yis-2sD0hnY7iBhUhcdCu-AVfXuo7Ulp7LgMq7lzY_Q",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaWNrQGdvb2dsZS5jb20iLCJpYXQiOjE3MDM1Mjg4NzIsImV4cCI6MTcwMzUzMDA3Mn0.-vc3KEWh3DA3MeWqokJR5iTttY9DcXD9e4JFSOvQDNc",
 							"type": "string"
 						}
 					]
@@ -573,7 +649,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/user/3/photo",
+					"raw": "http://localhost:8080/api/v1/products/2/photo",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -582,8 +658,8 @@
 					"path": [
 						"api",
 						"v1",
-						"user",
-						"3",
+						"products",
+						"2",
 						"photo"
 					]
 				}

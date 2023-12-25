@@ -2,6 +2,7 @@ package com.example.bookingmodel.data.entity;
 
 import com.example.bookingmodel.enums.CategoryProduct;
 import lombok.*;
+import org.hibernate.annotations.Type;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "product")
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Setter
 @Getter
 @Component
@@ -49,9 +50,10 @@ public class ProductEntity {
     @NonNull
     private CategoryProduct category;
 
-//    @Lob
-//    @Column(name = "image", columnDefinition = "BLOB")
-//    private byte[] image;
+    @Lob
+    @Type(type="org.hibernate.type.BinaryType")
+    @Column(name = "photo", columnDefinition="bytea")
+    private byte[] photo;
 
 
 }

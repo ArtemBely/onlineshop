@@ -32,7 +32,7 @@ public class ProductDTO {
     @NotEmpty
     private int mnozstvi;
 
-//    private byte[] image;
+    private byte[] photo;
 
     @NotEmpty
     private CategoryProduct category;
